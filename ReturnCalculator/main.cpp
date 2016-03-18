@@ -8,17 +8,19 @@
 
 #include <iostream>
 #include <fstream>
-//#include <thread>
+#include <list>
+#include <thread>
 #include "MonthlyData.h"
 
 using namespace std;
 
 
-vector<MonthlyData> parseInput(ifstream& inputFile) {
+list<MonthlyData> parseInput(ifstream& inputFile) {
 	
-	vector<MonthlyData> allData;
+	list<MonthlyData> allData;
 	
 	string line;
+	
 	// Processing month & year.
 	getline(inputFile, line);
 	int lineSize = static_cast<int>(line.size());
@@ -39,7 +41,7 @@ vector<MonthlyData> parseInput(ifstream& inputFile) {
 		}
 		
 		string symbol;
-		int col = 0;
+		list<MonthlyData>::iterator curMonth = allData.begin();
 		while (right <= lineSize) {
 			
 			if (right == lineSize || line[right] == ',') {
@@ -59,7 +61,8 @@ vector<MonthlyData> parseInput(ifstream& inputFile) {
 						value = stod(content);
 					}
 					
-					allData[col++].addData(symbol, value);
+					curMonth->addData(symbol, value);
+					++curMonth;
 				}
 				
 				left = ++right;
@@ -74,35 +77,50 @@ vector<MonthlyData> parseInput(ifstream& inputFile) {
 }
 
 
-void writeCsv(ofstream& outputFile, const vector<MonthlyData>& allData) {
+void writeCsv(ofstream& outputFile, const list<MonthlyData>& allData) {
 	
 	int numMonth = static_cast<int>(allData.size());
 	
 	outputFile << "Period";
-	for (int i = 1; i < numMonth; i++) {
-		outputFile << "," << allData[i].getYearMonth();
+	for (auto curMonth = allData.begin(); curMonth != allData.end(); ++curMonth) {
+		
+		if (curMonth != allData.begin()) {
+			outputFile << "," << curMonth->getYearMonth();
+		}
+		
 	}
 	outputFile << endl;
 	
 	outputFile << "Average return of first 10% percentile/each period";
-	for (int i = 1; i < numMonth; i++) {
-		outputFile << "," << allData[i].getTopTenPercentReturn();
+	for (auto curMonth = allData.begin(); curMonth != allData.end(); ++curMonth) {
+		
+		if (curMonth != allData.begin()) {
+			outputFile << "," << curMonth->getTopTenPercentReturn();
+		}
+		
 	}
 	outputFile << endl;
 	
 	outputFile << "Average return of last 10% percentile/each period";
-	for (int i = 1; i < numMonth; i++) {
-		outputFile << "," << allData[i].getBottomTenPercentReturn();
+	for (auto curMonth = allData.begin(); curMonth != allData.end(); ++curMonth) {
+		
+		if (curMonth != allData.begin()) {
+			outputFile << "," << curMonth->getBottomTenPercentReturn();
+		}
+		
 	}
 	outputFile << endl;
 	
 	double finalAverage = 0;
 	
 	outputFile << "Total average return/each period";
-	for (int i = 1; i < numMonth; i++) {
+	for (auto curMonth = allData.begin(); curMonth != allData.end(); ++curMonth) {
 		
-		outputFile << "," << allData[i].getMonthReturn();
-		finalAverage += allData[i].getMonthReturn();
+		if (curMonth != allData.begin()) {
+			outputFile << "," << curMonth->getMonthReturn();
+			finalAverage += curMonth->getMonthReturn();
+		}
+		
 		
 	}
 	outputFile << endl;
@@ -134,14 +152,23 @@ int main(int argc, const char * argv[]) {
 		return 1;
 	}
 	
-	vector<MonthlyData> allData = parseInput(inputFile);
+	list<MonthlyData> allData = parseInput(inputFile);
 	inputFile.close();
 	
-	for (int i = (int)allData.size() - 1; i > 0; i--) {
+	
+	list<MonthlyData>::iterator curMonth = allData.end();
+	--curMonth;
+	
+	while (curMonth != allData.begin()) {
 		
-		allData[i].getMonthReturn(allData.begin() + i - 1);
-
+		list<MonthlyData>::iterator nextMonth = curMonth;
+		--nextMonth;
+		
+		curMonth->getMonthReturn(prevMonth);
+		curMonth = nextMonth;
+		
 	}
+
 	
 	string outputFileName = "/Users/wushangqi/result.csv";
 	ofstream outputFile(outputFileName);
