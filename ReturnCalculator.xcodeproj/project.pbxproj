@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CD1F5291C9B9DF900351437 /* MonthlyData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1F5281C9B9DF900351437 /* MonthlyData.cpp */; };
 		4CDF5A2A1C87E2F500AB5815 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5A291C87E2F500AB5815 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4CD1F5271C9B9DE700351437 /* MonthlyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonthlyData.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		4CD1F5281C9B9DF900351437 /* MonthlyData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonthlyData.cpp; sourceTree = "<group>"; };
 		4CDF5A261C87E2F500AB5815 /* ReturnCalculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ReturnCalculator; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CDF5A291C87E2F500AB5815 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				4CDF5A291C87E2F500AB5815 /* main.cpp */,
+				4CD1F5271C9B9DE700351437 /* MonthlyData.h */,
+				4CD1F5281C9B9DF900351437 /* MonthlyData.cpp */,
 			);
 			path = ReturnCalculator;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CDF5A2A1C87E2F500AB5815 /* main.cpp in Sources */,
+				4CD1F5291C9B9DF900351437 /* MonthlyData.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +243,7 @@
 				4CDF5A2F1C87E2F500AB5815 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
