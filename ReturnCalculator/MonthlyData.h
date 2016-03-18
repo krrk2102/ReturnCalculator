@@ -62,9 +62,9 @@ struct DataSample {
  * Year and month indicate date.
  * The hash table stores return rates of companies identified by company symbol.
  * Two priority queues are used to keep track of stocks that have a return rate of 
- *		top ten percent or bottom ten percent in this month.
+ *	top ten percent or bottom ten percent in this month.
  * Two vectors are used to store next month's return rates, which correspond to top
- *		or bottom ten percent in this month.
+ *	or bottom ten percent in this month.
  *
  */
 class MonthlyData {

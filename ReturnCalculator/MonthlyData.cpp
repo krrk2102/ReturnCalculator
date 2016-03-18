@@ -77,7 +77,7 @@ MonthlyData::MonthlyData(const MonthlyData& copy) {
  *
  * This method is not supposed to receive any input parameters nor to return any results.
  * This method is supposed to be called after all stock return rates have been recorded 
- *		in the hash table class member.
+ *	in the hash table class member.
  *
  */
 void MonthlyData:: sort() {
