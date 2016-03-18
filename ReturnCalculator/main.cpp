@@ -8,8 +8,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <list>
-#include <thread>
 #include "MonthlyData.h"
 
 using namespace std;
@@ -164,7 +162,7 @@ int main(int argc, const char * argv[]) {
 		list<MonthlyData>::iterator nextMonth = curMonth;
 		--nextMonth;
 		
-		curMonth->getMonthReturn(prevMonth);
+		curMonth->getMonthReturn(nextMonth);
 		curMonth = nextMonth;
 		
 	}
