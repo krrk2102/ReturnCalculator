@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4CD1F5291C9B9DF900351437 /* MonthlyData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1F5281C9B9DF900351437 /* MonthlyData.cpp */; };
+		4CD301951C9C70D2000FFFF4 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 4CD301941C9C70D2000FFFF4 /* makefile */; };
 		4CDF5A2A1C87E2F500AB5815 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5A291C87E2F500AB5815 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,9 @@
 /* Begin PBXFileReference section */
 		4CD1F5271C9B9DE700351437 /* MonthlyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonthlyData.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		4CD1F5281C9B9DF900351437 /* MonthlyData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonthlyData.cpp; sourceTree = "<group>"; };
+		4CD301941C9C70D2000FFFF4 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = makefile; path = ReturnCalculator/makefile; sourceTree = "<group>"; };
+		4CD301961C9C89ED000FFFF4 /* result.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = result.csv; path = ReturnCalculator/result.csv; sourceTree = "<group>"; };
+		4CD301971C9C89ED000FFFF4 /* SP50_test.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SP50_test.csv; path = ReturnCalculator/SP50_test.csv; sourceTree = "<group>"; };
 		4CDF5A261C87E2F500AB5815 /* ReturnCalculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ReturnCalculator; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CDF5A291C87E2F500AB5815 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +48,9 @@
 		4CDF5A1D1C87E2F500AB5815 = {
 			isa = PBXGroup;
 			children = (
+				4CD301961C9C89ED000FFFF4 /* result.csv */,
+				4CD301971C9C89ED000FFFF4 /* SP50_test.csv */,
+				4CD301941C9C70D2000FFFF4 /* makefile */,
 				4CDF5A281C87E2F500AB5815 /* ReturnCalculator */,
 				4CDF5A271C87E2F500AB5815 /* Products */,
 			);
@@ -125,6 +132,7 @@
 			files = (
 				4CDF5A2A1C87E2F500AB5815 /* main.cpp in Sources */,
 				4CD1F5291C9B9DF900351437 /* MonthlyData.cpp in Sources */,
+				4CD301951C9C70D2000FFFF4 /* makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
