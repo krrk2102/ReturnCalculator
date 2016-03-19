@@ -9,7 +9,7 @@ The algorithm works in following step:
     5. For each stock in bottom 10%, retrieve corresponding stock return rates in next month.
 6. Calculate arithmetic average return rate of 10% top stocks' next month return rates.
 7. Calculate arithmetic average return rate of 10% bottom stocks' next month return rates.
-8. Calculate arithmetic average monthly return by subtracting bottom 10% average by top 10% average. 
+8. Calculate arithmetic average monthly return by subtracting bottom average by top average. 
 9. Calculate overall arithmetic average return of monthly returns.
 
 Input requirements:
@@ -17,14 +17,17 @@ Input file is assumed to contain valid return rates for no less than 2 months. S
 
 Program will ask user to specify location of input file. 
 Input file should in following format, in *.csv, which is comma separated:
+
     | 16-Feb | 16-Jan |
 GT  |  0.06  |  -0.13 |
 BWA |  0.11  |  -0.32 |
+
 The first line should represents year and month, with first column empty. First 2 digits are supposed to represents year, while last 3 characters represent month, and they are connected by a dash in the middle. 
 From second line, first column stands for corporation symbol. The remaining columns are return rates for each month. For some unavailable return information, please mark as "#N/A" and they will be regarded as value of 0.
 Input file allows empty lines, however does not allow any input file not following the format.
 
 The program automatically generates an output file, "result.csv", in the same directory of executable file. The output file is in the following format:
+
 Period                                             | 16-Jan  |
 Average return of first 10% percentile/each period | -0.0064 |
 Average return of last 10% percentile/each period  |  0.013  |
