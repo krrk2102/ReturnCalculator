@@ -17,6 +17,7 @@ Input file is assumed to contain valid return rates for no less than 2 months. S
 
 Program will ask user to specify location of input file. 
 Input file should in following format, in *.csv, which is comma separated:
+(Please refer to provided example file "SP50_test.csv".)
 
     | 16-Feb | 16-Jan |
 GT  |  0.06  |  -0.13 |
@@ -27,6 +28,7 @@ From second line, first column stands for corporation symbol. The remaining colu
 Input file allows empty lines, however does not allow any input file not following the format.
 
 The program automatically generates an output file, "result.csv", in the same directory of executable file. The output file is in the following format:
+(Please refer to provided example output "result.csv".)
 
 Period                                             | 16-Jan  |
 Average return of first 10% percentile/each period | -0.0064 |
