@@ -1,1 +1,35 @@
+Author: Shangqi Wu
 This is a tiny side tool developed to help my friend resolve evaluating effectiveness of the algorithm proposed in a paper from area of finance. 
+
+The algorithm works in following step: 
+1. Read in input information - multiple monthly return rates of each stock from csv file.
+2. For each month, retrieve 10% stocks which have highest return rates during that month. 
+    3. For each stock in top 10%, retrieve corresponding stock return rates in next month.
+4. For each month, retrieve 10% stocks which have lowest return rates during that month.
+    5. For each stock in bottom 10%, retrieve corresponding stock return rates in next month.
+6. Calculate arithmetic average return rate of 10% top stocks' next month return rates.
+7. Calculate arithmetic average return rate of 10% bottom stocks' next month return rates.
+8. Calculate arithmetic average monthly return by subtracting bottom 10% average by top 10% average. 
+9. Calculate overall arithmetic average return of monthly returns.
+
+Input requirements:
+Input file is assumed to contain valid return rates for no less than 2 months. Since this algorithm requires the later month's data for reference and calculation, data for only 1 month will result in no available data to use, and the program will not generate valid output. It will not crash though. 
+
+Program will ask user to specify location of input file. 
+Input file should in following format, in *.csv, which is comma separated:
+    | 16-Feb | 16-Jan |
+GT  |  0.06  |  -0.13 |
+BWA |  0.11  |  -0.32 |
+The first line should represents year and month, with first column empty. First 2 digits are supposed to represents year, while last 3 characters represent month, and they are connected by a dash in the middle. 
+From second line, first column stands for corporation symbol. The remaining columns are return rates for each month. For some unavailable return information, please mark as "#N/A" and they will be regarded as value of 0.
+Input file allows empty lines, however does not allow any input file not following the format.
+
+The program automatically generates an output file, "result.csv", in the same directory of executable file. The output file is in the following format:
+Period                                             | 16-Jan  |
+Average return of first 10% percentile/each period | -0.0064 |
+Average return of last 10% percentile/each period  |  0.013  |
+Total average return/each period                   |  0.0194 |
+Total average return of all period                 |  0.0194 |
+
+
+A makefile is also provided. Under the directory of source code file, please type "make" in command line, and the program will be automatically compiled and ran. By typing "make clean", the compiled program will be deleted. 
