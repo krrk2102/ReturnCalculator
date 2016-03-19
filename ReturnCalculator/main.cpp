@@ -102,7 +102,7 @@ int main(int argc, const char * argv[]) {
  * @param inputFile: an opened ifstream object. This function does not check if 
  *			it is open or not, please check it in main function.
  *
- * @return generated a STL linked list of MonthlyData objects.
+ * return generated a STL linked list of MonthlyData objects.
  *
  */
 list<MonthlyData> parseInput(ifstream& inputFile) {
