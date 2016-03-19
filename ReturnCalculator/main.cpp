@@ -78,7 +78,7 @@ int main(int argc, const char * argv[]) {
 	}
 	
 	// Process to generate output csv file.
-	string outputFileName = "/Users/wushangqi/result.csv";
+	string outputFileName = "./result.csv";
 	ofstream outputFile(outputFileName);
 	
 	if (!outputFile.is_open()) {
