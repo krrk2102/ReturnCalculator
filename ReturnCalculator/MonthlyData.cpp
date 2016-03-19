@@ -201,7 +201,7 @@ void MonthlyData::getBottomTenPercentReturn(const list<MonthlyData>::iterator& n
  *
  * This method is inspector to get year information.
  *
- * @return a string representing year.
+ * return a string representing year.
  *
  */
 string MonthlyData::getYear() const {
@@ -214,7 +214,7 @@ string MonthlyData::getYear() const {
  *
  * This method is inspector to get month information.
  *
- * @return a string representing month.
+ * return a string representing month.
  *
  */
 string MonthlyData::getMonth() const {
@@ -228,7 +228,7 @@ string MonthlyData::getMonth() const {
  *
  * This method is inspector to get year and month information combined.
  *
- * @return a string representing year and month in format of "16-Mar".
+ * return a string representing year and month in format of "16-Mar".
  *
  */
 string MonthlyData::getYearMonth() const {
@@ -244,7 +244,7 @@ string MonthlyData::getYearMonth() const {
  *
  * @param symbol: a string of company stock symbol.
  *
- * @return a string representing month.
+ * return a string representing month.
  *
  */
 double MonthlyData::getSingleReturn(const string& symbol) {
@@ -260,7 +260,7 @@ double MonthlyData::getSingleReturn(const string& symbol) {
  * This method is supposed to be called after sorting method and heap processing
  * method is finished.
  *
- * @return a double which is the value of average return rate.
+ * return a double which is the value of average return rate.
  *
  */
 double MonthlyData::getTopTenPercentReturn() const {
@@ -276,7 +276,7 @@ double MonthlyData::getTopTenPercentReturn() const {
  * This method is supposed to be called after sorting method and heap processing
  * method is finished.
  *
- * @return a double which is the value of average return rate.
+ * return a double which is the value of average return rate.
  *
  */
 double MonthlyData::getBottomTenPercentReturn() const {
@@ -292,7 +292,7 @@ double MonthlyData::getBottomTenPercentReturn() const {
  * This method is supposed to be called after sorting method and heap processing
  * method is finished.
  *
- * @return a double which is the value of average return rate.
+ * return a double which is the value of average return rate.
  *
  */
 double MonthlyData::getMonthReturn() const {
@@ -328,6 +328,8 @@ void MonthlyData::addData(const string& symbol, const double& rate) {
  * values calculating. It calls private methods for heap process in proper order, so improper
  * execution sequence by users can be prevented. 
  * This function is supposed to be called when all stock return rates are inserted into hash table. 
+ * 
+ * @param nextMonth: an iterator specifying address of next month's data in a STL linked list
  *
  */
 double MonthlyData::getMonthReturn(const list<MonthlyData>::iterator& nextMonth) {
