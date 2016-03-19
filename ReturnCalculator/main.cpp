@@ -39,9 +39,9 @@ void writeCsv(ofstream& outputFile, const list<MonthlyData>& allData);
 int main(int argc, const char * argv[]) {
 	
 	// Open csv file and parse input data into MonthlyData class.
-	string inputFileName = "/Users/wushangqi/SP50_test.csv";
-	//cin >> inputFileName;
+	string inputFileName;
 	ifstream inputFile;
+	cout << "Please enter input file name:" << endl;
 	
 	while (!inputFile.is_open()) {
 		
@@ -49,6 +49,7 @@ int main(int argc, const char * argv[]) {
 			return 0;
 		}
 		
+		cin >> inputFileName;
 		inputFile.open(inputFileName.c_str());
 		
 		if (!inputFile.is_open()) {
