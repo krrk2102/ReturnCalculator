@@ -30,6 +30,7 @@
 		4CD301941C9C70D2000FFFF4 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = makefile; path = ReturnCalculator/makefile; sourceTree = "<group>"; };
 		4CD301961C9C89ED000FFFF4 /* result.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = result.csv; path = ReturnCalculator/result.csv; sourceTree = "<group>"; };
 		4CD301971C9C89ED000FFFF4 /* SP50_test.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SP50_test.csv; path = ReturnCalculator/SP50_test.csv; sourceTree = "<group>"; };
+		4CD301981C9CD01F000FFFF4 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		4CDF5A261C87E2F500AB5815 /* ReturnCalculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ReturnCalculator; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CDF5A291C87E2F500AB5815 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,6 +49,7 @@
 		4CDF5A1D1C87E2F500AB5815 = {
 			isa = PBXGroup;
 			children = (
+				4CD301981C9CD01F000FFFF4 /* README */,
 				4CD301961C9C89ED000FFFF4 /* result.csv */,
 				4CD301971C9C89ED000FFFF4 /* SP50_test.csv */,
 				4CD301941C9C70D2000FFFF4 /* makefile */,
